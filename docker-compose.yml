@@ -1,0 +1,19 @@
+services:
+  mashk-09:
+    build: .
+    container_name: mashk-09
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DATABASE_PATH: /workspace/data/mashk_09.db
+      RANGE_MODE: synthetic-only
+    volumes:
+      - ./data:/workspace/data
+    networks:
+      - range_net
+    restart: unless-stopped
+
+networks:
+  range_net:
+    driver: bridge
+    internal: true

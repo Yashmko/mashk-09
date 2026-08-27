@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: mashk-09
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: RANGE_MODE
+        value: synthetic-only
+      - key: DATABASE_PATH
+        value: /tmp/mashk_09.db

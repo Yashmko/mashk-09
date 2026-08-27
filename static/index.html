@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#060707" />
+    <title>mashk-09 // sealed-world instrument</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <div class="app-shell">
+      <header class="site-nav">
+        <a class="wordmark" href="#top" aria-label="mashk-09 home"><span class="wordmark-symbol">m9</span><span class="wordmark-name">mashk-09</span></a>
+        <nav class="nav-links" aria-label="Primary navigation"><a href="#instrument">instrument</a><a href="#lineage">lineage</a><a href="#evidence">evidence</a></nav>
+        <div class="nav-right"><span class="live-indicator"><i></i> local / sealed</span><span class="clock" id="clock">--:--:-- UTC</span><button id="theme-button" class="icon-button" type="button" aria-label="Toggle display glow">◐</button></div>
+      </header>
+
+      <main id="top">
+        <section class="hero" id="instrument">
+          <div class="hero-copy">
+            <div class="eyebrow"><span>01</span> co-evolution research instrument</div>
+            <h1>Watch two<br /><em>intelligences</em><br />change each other.</h1>
+            <p class="lede">mashk-09 is a sealed-world red versus blue simulator. Every generation becomes memory. Every memory becomes a new move.</p>
+            <div class="hero-actions"><label class="count-control" for="round-count"><span>generations</span><input id="round-count" type="number" value="1" min="1" max="25" aria-label="Generations to run" /></label><button id="run-rounds" class="run-button" type="button"><span class="run-icon">↗</span><span>run simulation</span><span class="run-key">⌘ ↵</span></button><a class="text-link" href="#replay">explore the replay <span>↓</span></a></div>
+            <p id="run-status" class="run-status"><span class="status-bullet"></span> ready for a local synthetic round</p>
+          </div>
+          <div class="world-stage" aria-label="Abstract synthetic world visualizer">
+            <div class="stage-label top-left"><span>world_01</span><small>fixture plane / active</small></div>
+            <div class="stage-label top-right"><span id="stage-generation">gen 00</span><small>memory online</small></div>
+            <div class="orb-wrap"><div class="orb-halo"></div><div class="orb"><div class="orb-shine"></div><div class="orb-grid"></div><div class="orb-core"></div></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div></div>
+            <div class="stage-readout bottom-left"><span class="readout-dot red-dot"></span><div><small>red lineage</small><strong id="stage-red">standby</strong></div></div>
+            <div class="stage-readout bottom-right"><span class="readout-dot blue-dot"></span><div><small>blue lineage</small><strong id="stage-blue">standby</strong></div></div>
+            <div class="stage-axis axis-x"></div><div class="stage-axis axis-y"></div><div class="stage-coordinates">x 004.91<br />y 019.72<br />z 008.03</div>
+          </div>
+        </section>
+
+        <section class="manifesto-strip"><span class="strip-label">the rule of the room</span><p>Nothing leaves the room. Nothing arrives from the outside. The contest is synthetic; the learning loop is real.</p><span class="strip-code">M9 / 2026</span></section>
+
+        <section class="metrics-section" aria-label="Current metrics">
+          <div class="section-heading"><div><div class="eyebrow"><span>02</span> state telemetry</div><h2>Current signal</h2></div><span class="section-note">persisted in local sqlite</span></div>
+          <div class="metric-grid" id="metrics">
+            <article class="metric-card"><span class="metric-index">A /</span><div class="metric-label">generations</div><div class="metric-value" id="metric-rounds">0</div><p>persistent replay history</p></article>
+            <article class="metric-card metric-red"><span class="metric-index">B /</span><div class="metric-label">red win rate</div><div class="metric-value" id="metric-red">0%</div><p>compromise in fixture</p></article>
+            <article class="metric-card metric-blue"><span class="metric-index">C /</span><div class="metric-label">blue detection</div><div class="metric-value" id="metric-detect">0%</div><p>behavioral coverage</p></article>
+            <article class="metric-card metric-amber"><span class="metric-index">D /</span><div class="metric-label">avg detection</div><div class="metric-value" id="metric-time">—</div><p>seconds after action</p></article>
+          </div>
+        </section>
+
+        <section class="replay-layout" id="replay">
+          <article class="feature-panel score-panel"><div class="panel-top"><div><div class="eyebrow"><span>03</span> generation replay</div><h2>Pressure / response</h2></div><div class="legend"><span><i class="legend-red"></i>red</span><span><i class="legend-blue"></i>blue</span></div></div><div class="chart-wrap"><svg id="trend-chart" viewBox="0 0 900 340" role="img" aria-label="Generation score trend"></svg><div id="chart-empty" class="empty-state">Run the first generation to wake the trace.</div></div><div class="chart-foot"><span>score / 100</span><span id="chart-range">awaiting history</span></div></article>
+          <article class="feature-panel control-panel" id="lineage"><div class="panel-top"><div><div class="eyebrow"><span>04</span> lineage memory</div><h2>What changed?</h2></div><span class="memory-state">● live</span></div><div class="lineage-card lineage-red"><div class="lineage-title"><span class="lineage-token">R</span><div><strong>red / pressure</strong><small>attack policy</small></div></div><div id="red-playbook" class="playbook-list"><span class="muted">No memory yet.</span></div></div><div class="lineage-card lineage-blue"><div class="lineage-title"><span class="lineage-token">B</span><div><strong>blue / response</strong><small>defense policy</small></div></div><div id="blue-playbook" class="playbook-list"><span class="muted">No memory yet.</span></div></div><p class="reflection-note">The next generation inherits the last one’s decisions, not just its score.</p></article>
+        </section>
+
+        <section class="evidence-layout" id="evidence">
+          <article class="feature-panel timeline-panel"><div class="panel-top"><div><div class="eyebrow"><span>05</span> mission replay</div><h2>Event stream</h2></div><select id="generation-select" aria-label="Choose generation"><option value="">no rounds</option></select></div><div id="timeline" class="timeline"><div class="empty-state">The event stream will appear here after a round.</div></div></article>
+          <article class="feature-panel evidence-panel"><div class="panel-top"><div><div class="eyebrow"><span>06</span> evidence register</div><h2>Novel moves</h2></div><span id="technique-count" class="count-badge">0</span></div><p class="panel-intro">A move is marked novel when it has not appeared in a prior generation.</p><div id="techniques" class="technique-list"><div class="empty-state">No novel techniques observed.</div></div></article>
+        </section>
+      </main>
+
+      <footer class="site-footer"><div><span class="footer-mark">m9</span><span>mashk-09 / sealed-world instrument</span></div><span>no real-world network activity</span><span>build 2026.08</span></footer>
+    </div>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
